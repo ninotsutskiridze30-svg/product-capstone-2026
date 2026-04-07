@@ -1,6 +1,6 @@
 # All Problem Statements
 
-**Team Name:** [Your team name]  
+**Team Name:** [Nino, Mari, Luka, Lizi]  
 **Course:** CS-PD-2026  
 **Lab 1 Date:** [March 13 or March 14, 2026]  
 **Last Updated:** [Date]  
@@ -19,174 +19,132 @@ Every problem statement must trace back to direct personal observation or lived 
 
 ---
 
-## [Team Member 1 Name]
+## [Nino Tsutskiridze]
 
 ### H1 -- Hairband (a problem in your own daily life)
 
 **Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
+KIU students have trouble tracking timetable changes in the LMS when schedules are updated without clear notifications, and it matters because they may miss lectures or arrive at university unnecessarily.
 
 **Where this observation comes from:**  
-[1-2 sentences describing the specific moment or pattern in your own life that surfaced this problem. Be personal and specific.]
+Last semester, I almost missed a quiz because the time was changed in the system without a clear notification, and I only found out through my friends.
 
-**Rough severity estimate:** Low / Medium / High  
-[Why did you rate it this way?]
+**Rough severity estimate:** Medium  
+It happens occasionally but can affect attendance and grades.
 
 ---
 
 ### H2 -- Headache (a problem you observed in someone else)
 
 **Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
+First-year programming students at KIU have trouble understanding their midterm results when grading criteria are not clearly provided, and it matters because they cannot identify their mistakes or improve for future assessments.
 
 **Where this observation comes from:**  
-[Who did you observe? What specific situation did you witness? You do not need to name them -- "a friend who works part-time at a pharmacy" is enough context.]
+I observed a friend who received a low grade in Fundamentals of Programming but could not understand why because no clear grading rubric was shared.
 
-**Rough severity estimate:** Low / Medium / High  
-[Why did you rate it this way?]
+**Rough severity estimate:** low
+It affects learning and creates confusion about performance.
 
 ---
 
 ### H3 -- Heartburn (a recurring problem in a community or context you know)
 
 **Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
+Food delivery users in Tbilisi have trouble receiving orders in good condition during peak hours, when delivery delays and poor handling occur, and it matters because the food quality is reduced and customers feel dissatisfied with the service.
 
 **Where this observation comes from:**  
-[What community or context is this? How long have you been aware of it? Have you seen it affect multiple people or just one?]
+I and several friends have experienced late deliveries and poorly handled food multiple times when ordering during busy hours.
 
-**Rough severity estimate:** Low / Medium / High  
-[Why did you rate it this way?]
+
+**Rough severity estimate:**  High  
+It directly affects customer satisfaction and value for money.
 
 ---
 
 ---
 
-## [Team Member 2 Name]
+
+## [Lizi Margvelashvili]
 
 ### H1 -- Hairband
 
 **Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
+ I struggle with doomscrolling before bed, which overstimulates my brain, disrupts sleep, and leaves me drained
 
 **Where this observation comes from:**  
-[Your own experience -- be specific]
+I often tell myself I’ll "just check for 5 minutes," but then an hour vanishes before I even realize it.
 
-**Rough severity estimate:** Low / Medium / High  
-[Reasoning]
+**Rough severity estimate:** Medium  
+It disrupts my sleep and harms my productivity the next day.
+
 
 ---
 
 ### H2 -- Headache
 
 **Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
+Students and low-income individuals are struggling with the sharp nationwide spike in rental prices, especially in university towns. This trend is leading to overcrowded student dorms, financial crises for young people, and, in many cases, threats to their ability to continue their education.
 
 **Where this observation comes from:**  
-[Describe what you witnessed and in what context]
+This insight comes from observing friends and the broader social climate—many peers are crammed into tiny apartments with multiple roommates or are scrambling for spots in overcrowded dorms, where prices have also risen.
 
-**Rough severity estimate:** Low / Medium / High  
-[Reasoning]
+**Rough severity estimate:** High 
+As a result, the rough severity estimate is high. This is a critical social issue that directly impacts access to education and the economic stability of the younger generation.
 
 ---
 
 ### H3 -- Heartburn
 
 **Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
+Drivers are frustrated by broken traffic infrastructure and endless rush-hour gridlock on all major routes, which wastes fuel, increases pollution, and causes mental burnout for everyone behind the wheel.
 
 **Where this observation comes from:**  
-[Describe the community and your knowledge of it]
+From my own experience, this frustration becomes immediately clear—when you're driving, you see exactly how many hours of your life are wasted just sitting still. This is a shared frustration for thousands of people stuck in the same "trap" every single day.
 
-**Rough severity estimate:** Low / Medium / High  
-[Reasoning]
-
----
+**Rough severity estimate:** High  
+Traffic isn't just about being late; it’s an economic loss, a health hazard (due to emissions and stress), and a total drain on daily productivity.
 
 ---
 
-## [Team Member 3 Name]
+---
+
+## [Luka Khimshiashvili]
 
 ### H1 -- Hairband
 
 **Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
+I have trouble with maintaining a consistent sleep and wellness routine, during busy semester peaks, and it matters because irregular habits make it harder to stay focused and energized for long-term projects.
 
 **Where this observation comes from:**  
-[Your own experience -- be specific]
+My own experience of staying up late to finish tasks and realizing that my productivity the following day drops significantly, creating a cycle that is hard to break.
 
-**Rough severity estimate:** Low / Medium / High  
-[Reasoning]
+**Rough severity estimate:** Medium
+It’s a common challenge, but it impacts my daily mood and the quality of my work if I don't stay mindful of it.
 
 ---
 
 ### H2 -- Headache
 
 **Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
+I have trouble with finding quiet, dedicated spaces for deep focus, when living in a shared or noisy environment, and it matters because constant small interruptions make it difficult to get into a "flow state" for complex problem-solving.
 
 **Where this observation comes from:**  
-[Describe what you witnessed]
+I have noticed that when I am in common areas or shared housing, the ambient noise or frequent social check-ins—while well-intended—often break my concentration right when I'm making progress.
 
-**Rough severity estimate:** Low / Medium / High  
-[Reasoning]
-
+**Rough severity estimate:** Low 
+ It is manageable with things like noise-canceling headphones, but it still requires an extra level of effort to find the right environment to be effective.
 ---
 
 ### H3 -- Heartburn
 
 **Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
+Young adults have trouble prioritizing meaningful social connections over digital interactions, in an increasingly remote world, and it matters because relying mostly on screens for communication can lead to a sense of social fatigue.
 
 **Where this observation comes from:**  
-[Describe the community and your connection to it]
+Observing my circle of friends and peers; we are often "connected" via messages all day, yet we sometimes realize it has been weeks since we actually sat down for a face-to-face conversation.
 
-**Rough severity estimate:** Low / Medium / High  
-[Reasoning]
-
----
-
----
-
-## [Team Member 4 Name -- delete this section if team has 3 members]
-
-### H1 -- Hairband
-
-**Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
-
-**Where this observation comes from:**  
-[Your own experience]
-
-**Rough severity estimate:** Low / Medium / High  
-[Reasoning]
-
----
-
-### H2 -- Headache
-
-**Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
-
-**Where this observation comes from:**  
-[Describe what you witnessed]
-
-**Rough severity estimate:** Low / Medium / High  
-[Reasoning]
-
----
-
-### H3 -- Heartburn
-
-**Problem:**  
-[WHO] has trouble with [WHAT], [WHEN/WHERE], and it matters because [WHY].
-
-**Where this observation comes from:**  
-[Describe the community and your connection to it]
-
-**Rough severity estimate:** Low / Medium / High  
-[Reasoning]
-
+**Rough severity estimate:** Medium  
+While digital tools are helpful, the lack of consistent, in-person community can feel a bit draining over time and affects our overall sense of balance.
 ---
 
 ---
@@ -197,21 +155,19 @@ Every problem statement must trace back to direct personal observation or lived 
 
 | # | Problem (one-line summary) | Member | H Category | Severity |
 |---|--------------------------|--------|------------|---------|
-| 1 | | | Hairband / Headache / Heartburn | Low / Medium / High |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
-| 9 | | | | |
-| 10 | | | | |
-| 11 | | | | |
-| 12 | | | | |
+| 1 | Students miss lectures due to LMS changes | Nino | Hairband | Medium |
+| 2 | Students don’t understand midterm grading | Nino | Headache | Medium |
+| 3 | Poor food delivery quality during peak hours | Nino | Heartburn | High |
+| 4 | Doomscrolling affects sleep | Lizi | Hairband | Medium |
+| 5 | Students struggle with high rent prices | Lizi | Headache | High |
+| 6 | Traffic congestion causes time loss | Lizi | Heartburn | High |
+| 7 | Students struggle with consistent sleep routines | Luka | Hairband | Medium |
+| 8 | Students lack quiet study spaces | Luka | Headache | Low |
+| 9 | Overuse of digital communication reduces real connections | Luka | Heartburn | Medium |
 
-**Total problems in pool:** [Number]  
-**Domains represented:** [List the broad areas -- e.g., education, transport, healthcare, productivity]  
+
+**Total problems in pool:** [9]  
+**Domains represented:** [education, transport, healthcare, productivity]  
 
 ---
 

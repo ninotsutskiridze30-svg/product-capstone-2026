@@ -1,6 +1,6 @@
 # Team Contract
 
-**Team Name:** [Your team name]  
+**Team Name:** [Nino, Mari, Luka, Lizi]  
 **Course:** CS-PD-2026 Product Development for Software Engineers  
 **Date Created:** [Date]  
 **Last Updated:** [Date]  
@@ -11,24 +11,24 @@
 
 | Name | Role | Primary Accountability |
 |------|------|----------------------|
-| [Name] | Program Lead | Deadlines, submissions, conflict resolution |
-| [Name] | Discovery Lead | Interview quality, synthesis, customer insight |
-| [Name] | Tech Lead | Repository, code quality, architecture |
-| [Name if 4 members] | [Role doubled] | [Specify which role and what specifically] |
+| [Nino Tsutskiridze] | Program Lead | Deadlines, submissions, conflict resolution |
+| [Lizi Margvelashvili] | Discovery Lead | Interview quality, synthesis, customer insight |
+| [Luka Khimshiashvili] | Tech Lead | Repository, code quality, architecture |
+| [Mari Janjghava] | Discovery Lead | Interview quality, synthesis, customer insight |
 
 ---
 
 ## Communication
 
-**Primary channel:** [e.g., WhatsApp group, Telegram, Discord -- name the specific group]
+**Primary channel:** [Messenger]
 
-**Standup cadence:** [e.g., "Twice weekly: Tuesday and Thursday at 20:00, voice call, 15 minutes max"]
+**Standup cadence:** [Once weekly: Thursday at 19:00, voice call, 15 minutes max]
 
-**Response time expectation:** [e.g., "All messages acknowledged within 4 hours during 09:00-22:00. Messages after 22:00 are acknowledged by 10:00 the following morning."]
+**Response time expectation:** [All messages acknowledged within 4 hours during 09:00-22:00. Messages after 22:00 are acknowledged by 10:00 the following morning.]
 
-**Meeting location:** [e.g., "Online via Google Meet. Physical if both parties are on campus."]
+**Meeting location:** [Online via Messenger.]
 
-**If someone goes silent for more than 24 hours with a deadline approaching:** [Describe what happens -- who follows up, what the escalation looks like]
+**If someone goes silent for more than 24 hours with a deadline approaching:** [One team member sends a follow-up message. If there is no response within 4 hours, the Program Lead is notified and tasks are redistributed among the team.]
 
 ---
 
@@ -64,25 +64,20 @@ The team agrees to follow the KIU 4-Step Conflict Protocol:
 
 **How contributions are tracked:** Every substantive contribution is logged via a GitHub commit or pull request. Interview notes, decisions, and documents are committed by the person who created them.
 
-**Attendance at labs:** [State your team's expectation -- e.g., "All team members attend every lab unless a documented reason is shared at least 12 hours in advance"]
+**Attendance at labs:** All team members attend every lab unless they inform the team at least 12 hours in advance.
 
-**Deadline responsibility:** [State who is responsible for what -- e.g., "Program Lead is responsible for ensuring files are committed by the deadline. All other members are responsible for having their individual components ready 12 hours before the deadline."]
+**Deadline responsibility:** Program Lead ensures submission. All members must complete their tasks at least 6 hours before the deadline.
 
-**What happens if a team member consistently under-contributes:** [Be specific. e.g., "After two documented instances, the team meets to redistribute work and notifies the instructor. Peer assessment will reflect actual contribution."]
-
+**What happens if a team member consistently under-contributes:** After two missed responsibilities, the team will meet to discuss and redistribute tasks. If the issue continues, the instructor will be notified.
 ---
 
 ## Team Norms
 
-[Write 3-5 norms your team has explicitly agreed to. These should be specific to your team. Examples to replace or adapt:]
-
-- We write commit messages that describe what the commit actually contains, not just "update" or "fix."
-- We do not make major changes to shared documents without communicating to the team first.
-- We give honest feedback in peer review -- inflated scores to protect teammates are not fair to anyone.
-- If we are blocked or stuck on something, we say so within 24 hours rather than going silent.
-- [Add your own]
-
----
+- We write clear and descriptive commit messages so everyone understands what was changed.
+- We communicate before making major edits to shared documents to avoid conflicts.
+- We respond to team messages within 3–4 hours during the day and inform others if unavailable.
+- If someone is stuck or cannot complete a task, they inform the team within 24 hours.
+- We divide work fairly and respect deadlines to avoid last-minute pressure on teammates.
 
 ## Sign-Off
 
@@ -90,10 +85,10 @@ By committing this document, all team members confirm they have read, understood
 
 | Name | GitHub Username | Date |
 |------|----------------|------|
-| [Name] | @[username] | [Date] |
-| [Name] | @[username] | [Date] |
-| [Name] | @[username] | [Date] |
-| [Name if 4] | @[username] | [Date] |
+| [Nino Tsutskiridze] | @[ninotsutskiridze30-svg] | [Date] |
+| [Luka Khimshiashvili] | @[username] | [Date] |
+| [Lizi Margvelashvili] | @[username] | [Date] |
+| [Mari Janjghava] | @[username] | [Date] |
 
 ---
 
