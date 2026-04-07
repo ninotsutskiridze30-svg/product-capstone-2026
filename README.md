@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CS-PD-2026: Product Development for Software Engineers
 
 **Institution:** Kutaisi International University  
@@ -377,3 +378,4 @@ Checkpoint deadlines are listed in each lab's README and confirmed in the lectur
 ---
 
 *CS-PD-2026 | Kutaisi International University | Spring 2026 | zeshan.ahmad@kiu.edu.ge*
+
