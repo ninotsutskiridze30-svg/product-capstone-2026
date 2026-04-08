@@ -1,99 +1,55 @@
 # Interview Outreach Tracker
 
-**Team Name:** [Your team name]
-**Problem:** [One-sentence problem statement]
-**Target:** 10 completed interviews by end of Week 4 (by 9 April 2026)
-**Minimum for Lab 2 homework:** 5 contacts identified and outreach initiated by 25 March 2026
+**Team Name:** Nino, Mari, Luka, Lizi  
+**Problem:** University students in Tbilisi struggle to find affordable and reliable rental housing before the semester starts  
+**Target:** 10 completed interviews by end of Week 4 (by 9 April 2026)  
+**Minimum for Lab 2 homework:** 5 contacts identified and outreach initiated by 25 March 2026  
 
 ---
 
 ## ICP Screener Reminder
 
-Before logging a contact, confirm they match your ICP. The screener questions are in your interview script. Do not interview people who do not match — bad interviews produce misleading data.
-
-Your ICP in one sentence: [Write it here]
+Your ICP in one sentence:  
+Second- and third-year university students in Tbilisi who recently searched for rental housing before the semester.
 
 ---
 
 ## Contact Log
 
-| # | Contact (first name or initials) | ICP match reason | Outreach method | Date contacted | Interview date | Status | Interviewed by | Notes |
-|---|----------------------------------|-----------------|-----------------|----------------|----------------|--------|----------------|-------|
-| 1 | | | | | | | | |
-| 2 | | | | | | | | |
-| 3 | | | | | | | | |
-| 4 | | | | | | | | |
-| 5 | | | | | | | | |
-| 6 | | | | | | | | |
-| 7 | | | | | | | | |
-| 8 | | | | | | | | |
-| 9 | | | | | | | | |
-| 10 | | | | | | | | |
-| 11 | | | | | | | | |
-| 12 | | | | | | | | |
-| 13 | | | | | | | | |
-| 14 | | | | | | | | |
-| 15 | | | | | | | | |
-
-Add more rows as needed. Always schedule more interviews than you need — cancellations are normal.
-
----
-
-## Status Key
-
-| Status | Meaning |
-|--------|---------|
-| Identified | You know who this person is and plan to reach out |
-| Contacted | You have sent the outreach message |
-| Scheduled | Interview date and time confirmed |
-| Completed | Interview done, log written |
-| Declined | They said no or did not respond after two attempts |
-| Rescheduled | Was scheduled, moved to a new date |
-
----
-
-## Outreach Message Templates
-
-### Template A: Friend or classmate
-
-"Hey [Name], I'm working on a project this semester researching [general topic — do not pitch your solution]. I'm trying to understand how [relevant experience] works for people. Would you have 20-30 minutes sometime this week for a quick conversation? Coffee on me if you're on campus."
-
-### Template B: Acquaintance or warm introduction
-
-"Hi [Name], [Mutual contact] suggested I reach out. I'm working on a university research project around [general topic]. I'm looking to have a few conversations with people who [ICP description in plain language]. Would you be open to a 20-30 minute chat this week? It would really help our research."
-
-### Template C: Cold outreach (group, forum, community)
-
-"Hi everyone, I'm a [year]-year student at KIU working on a product development project. I'm researching [general topic] and would love to speak with anyone who [ICP description in plain language]. It would take 20-30 minutes over Google Meet or in person on campus. DM me if you'd be up for it. Thanks!"
+| # | Contact | ICP match reason | Outreach method | Date contacted | Interview date | Status | Interviewed by | Notes |
+|---|--------|------------------|-----------------|----------------|----------------|--------|----------------|-------|
+| 1 | K.G | KIU student, recently rented apartment | WhatsApp | Mar 20 | Mar 21 | Completed | Nino | Had issues with outdated listings |
+| 2 | E.L | Student, searching for housing now | In person | Mar 20 | Mar 22 | Completed | Nino | Mentioned fake listings |
+| 3 | N.M | Lives in shared apartment | WhatsApp | Mar 21 | Mar 23 | Scheduled | Mari | Looking for roommates |
+| 4 | G.T | Recently moved to Tbilisi | Messenger | Mar 21 | Mar 24 | Scheduled | Luka | New to renting |
+| 5 | L.S | KIU student renting | In person | Mar 22 | Mar 25 | Contacted | Lizi | Waiting for reply |
+| 6 | M.K | Student in Facebook housing groups | WhatsApp | Mar 22 | | Contacted | Nino | Active in groups |
+| 7 | A.R | Shared flat renter | Messenger | Mar 23 | | Identified | Mari | Potential interview |
+| 8 | D.B | Student renting apartment | WhatsApp | Mar 23 | | Identified | Luka | Friend referral |
+| 9 | S.T | Searching housing now | In person | Mar 24 | | Contacted | Lizi | Busy schedule |
+| 10 | R.L | Recently rented | WhatsApp | Mar 24 | | Identified | Nino | Will contact soon |
 
 ---
 
 ## Progress Summary
 
-Update this after each interview is completed.
-
 | Week | Target interviews | Completed | Running total |
 |------|------------------|-----------|---------------|
-| Week 2 (by 25 Mar) | 0 completed, 5 contacted | | |
-| Week 3 (by 1 Apr) | 4 completed | | |
+| Week 2 (by 25 Mar) | 0 completed, 5 contacted | 2 | 2 |
+| Week 3 (by 1 Apr) | 4 completed | 4 | 4 |
 | Week 4 (by 9 Apr) | 10 completed | | |
 
 ---
 
 ## Referral Log
 
-Track people your interviewees referred you to. Referrals are often your best interviews.
-
 | Referred by (interview #) | Referred person | Contact info | Status |
 |--------------------------|----------------|--------------|--------|
-| | | | |
-| | | | |
-| | | | |
+| P1 | N.M | WhatsApp | Contacted |
+| P2 | D.B | Messenger | Identified |
 
 ---
 
 ## Notes and Observations
 
-Use this space to record any patterns you notice in who agrees to be interviewed, who declines, and any common traits among people who are most forthcoming during interviews.
-
-[Write here]
+Most students are willing to participate when contacted through personal connections such as classmates or friends. Cold outreach is less effective. Students who recently searched for housing are more engaged and provide more detailed responses. Many participants mention similar issues such as outdated listings, lack of trust, and time pressure.
