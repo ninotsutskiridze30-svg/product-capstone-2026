@@ -1,43 +1,65 @@
 # Interview Outreach Tracker
 
-**Team Name:** Nino, Mari, Luka, Lizi  
-**Problem:** University students in Tbilisi struggle to find affordable and reliable rental housing before the semester starts  
-**Target:** 10 completed interviews by end of Week 4 (by 9 April 2026)  
-**Minimum for Lab 2 homework:** 5 contacts identified and outreach initiated by 25 March 2026  
+**Team Name:** TutorLink Team
+**Problem:** University students in Georgia spend significantly more time and effort than expected finding a suitable private tutor, because the discovery process is fragmented across word-of-mouth channels with no visibility into availability, rates, or subject specialisation.
+**Target:** 10 completed interviews by end of Week 4 (by April 9, 2026)
+**Minimum for Lab 2 homework:** 5 contacts identified and outreach initiated by March 25, 2026
 
 ---
 
 ## ICP Screener Reminder
 
-Your ICP in one sentence:  
-Second- and third-year university students in Tbilisi who recently searched for rental housing before the semester.
+**Primary ICP in one sentence:**
+University students at KIU who have searched for a private tutor in the past semester and found the search process frustrating or time-consuming.
+
+**Secondary ICP in one sentence:**
+Parents in Tbilisi who are paying for a private tutor for their secondary school child and have no reliable way to assess whether sessions are producing progress.
 
 ---
 
-## Contact Log
+## Outreach Message Templates
+
+### Template A — Primary ICP (Student who searched for a tutor)
+
+"Hey [name], I'm doing research for a university project about how students find tutors when they need help with a subject. I remember you mentioned looking for one [recently / last semester]. Would you have 20 minutes sometime this week to tell me about that experience? It would be a real conversation, not a survey — I just want to understand what it was like. Happy to meet on campus or do a quick call."
+
+### Template B — Secondary ICP (Parent of tutored student)
+
+"Hello, I'm [name], a student at KIU working on a research project about private tutoring. I'm hoping to speak with parents who have experience finding and working with private tutors for their children. Would you be open to a 20-minute conversation this week? I'm trying to understand the experience from the parent's perspective — what works and what doesn't. I can speak in Georgian or English, whichever you prefer."
+
+---
+
+## Contact Log — Primary ICP (Students)
 
 | # | Contact | ICP match reason | Outreach method | Date contacted | Interview date | Status | Interviewed by | Notes |
-|---|--------|------------------|-----------------|----------------|----------------|--------|----------------|-------|
-| 1 | K.G | KIU student, recently rented apartment | WhatsApp | Mar 20 | Mar 21 | Completed | Nino | Had issues with outdated listings |
-| 2 | E.L | Student, searching for housing now | In person | Mar 20 | Mar 22 | Completed | Nino | Mentioned fake listings |
-| 3 | N.M | Lives in shared apartment | WhatsApp | Mar 21 | Mar 23 | Scheduled | Mari | Looking for roommates |
-| 4 | G.T | Recently moved to Tbilisi | Messenger | Mar 21 | Mar 24 | Scheduled | Luka | New to renting |
-| 5 | L.S | KIU student renting | In person | Mar 22 | Mar 25 | Contacted | Lizi | Waiting for reply |
-| 6 | M.K | Student in Facebook housing groups | WhatsApp | Mar 22 | | Contacted | Nino | Active in groups |
-| 7 | A.R | Shared flat renter | Messenger | Mar 23 | | Identified | Mari | Potential interview |
-| 8 | D.B | Student renting apartment | WhatsApp | Mar 23 | | Identified | Luka | Friend referral |
-| 9 | S.T | Searching housing now | In person | Mar 24 | | Contacted | Lizi | Busy schedule |
-| 10 | R.L | Recently rented | WhatsApp | Mar 24 | | Identified | Nino | Will contact soon |
+|---|---------|------------------|-----------------|----------------|----------------|--------|----------------|-------|
+| 1 | T.K. | 2nd year CS, searched for maths tutor in Feb, posted in group chat | WhatsApp (direct) | Mar 21 | Mar 22 | Scheduled | Nino | Knows the problem well — posted twice in the CS group |
+| 2 | A.B. | 1st year, looking for English tutor now, asked Nino for help finding one | In person | Mar 21 | Mar 23 | Scheduled | Nino | Currently in the middle of the search process — ideal timing |
+| 3 | G.M. | 3rd year, found a maths tutor last semester after "two weeks of messaging" | WhatsApp (direct) | Mar 21 | Mar 24 | Contacted | Luka | Said he'd be happy to talk — waiting to confirm time |
+| 4 | S.N. | 2nd year, international student from Azerbaijan, no existing network — relevant for the "no starting point" dimension | WhatsApp (direct) | Mar 22 | Mar 25 | Contacted | Lizi | Specifically relevant to the access-gap angle in our ICP |
+| 5 | M.T. | 3rd year, tutors privately herself — can speak to both sides of the search | In person | Mar 22 | Mar 24 | Scheduled | Mari | Will ask about the tutor-side experience in the close section |
+| 6 | D.K. | 1st year, roommate of Luka, searched for a physics tutor in January | WhatsApp (direct) | Mar 23 | — | Identified | Luka | Luka will reach out by Mar 23 |
+| 7 | N.A. | 2nd year economics, searched for a statistics tutor, used Facebook groups and found nothing useful | Messenger | Mar 23 | — | Identified | Mari | Economics context broadens beyond CS |
+| 8 | L.G. | KIU student, posted in the CS group chat asking about tutors two weeks ago | WhatsApp (direct) | Mar 24 | — | Identified | Nino | Nino knows them from orientation |
+
+---
+
+## Contact Log — Secondary ICP (Parents)
+
+| # | Contact | ICP match reason | Outreach method | Date contacted | Interview date | Status | Interviewed by | Notes |
+|---|---------|------------------|-----------------|----------------|----------------|--------|----------------|-------|
+| 9 | Neighbour of Lizi | Paid three months of tutoring, discovered no progress via test result — the exact observed case that generated Problem 5 | In person (Lizi) | Mar 21 | Mar 23 | Scheduled | Lizi | Direct relationship. Will ask for referrals at the end. |
+| 10 | Parent of Mari's former tutoring student | Mari tutored their child for 6 months — knows the parent personally | WhatsApp (Mari's contact) | Mar 22 | — | Contacted | Mari | Parent may be willing to discuss the experience from their side |
 
 ---
 
 ## Progress Summary
 
-| Week | Target interviews | Completed | Running total |
-|------|------------------|-----------|---------------|
-| Week 2 (by 25 Mar) | 0 completed, 5 contacted | 2 | 2 |
-| Week 3 (by 1 Apr) | 4 completed | 4 | 4 |
-| Week 4 (by 9 Apr) | 10 completed | | |
+| Week | Target contacts | Target completed interviews | Running total completed |
+|------|----------------|-----------------------------|------------------------|
+| Week 2 (by Mar 25) | 5+ identified, outreach started | 0 required | 0 |
+| Week 3 (by Apr 1) | All 10 identified | 4 completed | 4 |
+| Week 4 (by Apr 9) | — | 10 completed | 10 |
 
 ---
 
@@ -45,11 +67,16 @@ Second- and third-year university students in Tbilisi who recently searched for 
 
 | Referred by (interview #) | Referred person | Contact info | Status |
 |--------------------------|----------------|--------------|--------|
-| P1 | N.M | WhatsApp | Contacted |
-| P2 | D.B | Messenger | Identified |
+| Will complete after first interviews are done | — | — | — |
 
 ---
 
 ## Notes and Observations
 
-Most students are willing to participate when contacted through personal connections such as classmates or friends. Cold outreach is less effective. Students who recently searched for housing are more engaged and provide more detailed responses. Many participants mention similar issues such as outdated listings, lack of trust, and time pressure.
+Outreach is going more smoothly for the primary ICP (students) than for the secondary (parents). Students respond quickly to direct WhatsApp messages from classmates, especially when framed as peer research rather than a formal study. The parent segment requires warmer introductions — cold outreach to parents is unlikely to succeed. We will build the parent interview pipeline primarily through referrals from the first two parent contacts (Lizi's neighbour and Mari's former student's parent).
+
+We are prioritising interviews with students who are currently in the middle of the search process (Contact #2) or who have just completed it (Contacts #1, #3), as their recollection will be most accurate and least reconstructed.
+
+---
+
+*CS-PD-2026 | Kutaisi International University | Spring 2026*
