@@ -153,6 +153,179 @@ product-capstone-2026/
     └── week-15-milestone.md           # Checkpoint 4 / Demo Day
 ```
 
+# TutorLink
+
+## Live MVP
+
+The team collaborated on a deployed tutoring platform MVP available at:
+
+https://tutoring-lyart.vercel.app/en
+
+## MVP Features
+
+- Browse tutors
+- View tutor profiles
+- Multilanguage support
+- Tutor discovery flow
+- Student-focused UI
+
+# TutorLink
+
+A tutoring discovery platform helping university students quickly find reliable tutors for academic support.
+
+---
+
+## Problem
+
+University students often struggle to find trustworthy tutors through scattered Facebook posts, Telegram groups, and word-of-mouth recommendations. Existing methods are unstructured, time-consuming, and lack transparency.
+
+---
+
+## Solution
+
+TutorLink provides a structured tutoring platform where students can:
+
+* browse tutors
+* compare tutor profiles
+* discover tutors by subject
+* access multilingual support
+* quickly connect with tutors
+
+---
+
+## Live MVP
+
+Deployed application:
+
+https://tutoring-lyart.vercel.app/en
+
+---
+
+## Features
+
+* Tutor discovery
+* Detailed tutor profiles
+* Responsive UI
+* Multilanguage support
+* Student-focused browsing experience
+
+---
+
+## Screenshots
+
+### Homepage
+
+![Homepage](screenshots/homepage.png)
+
+### Tutor Profiles
+
+![Tutors](screenshots/tutorpage.png)
+
+### Mobile View
+
+![Mobile](screenshots/subjects.png)
+
+---
+
+## User Validation
+
+The team conducted usability testing sessions with university students.
+
+### Key Findings
+
+* Students preferred structured tutor profiles
+* Users trusted detailed tutor descriptions
+* Multilanguage support improved usability
+* Students preferred the platform over Facebook groups
+
+Testing files are available in:
+
+02-design/user-testing/
+
+---
+
+## Experiment Evidence
+
+The team conducted a tutor discovery experiment to evaluate whether students prefer structured tutoring platforms over informal social media searching.
+
+Results showed that users found tutor discovery:
+
+* faster
+* more organized
+* more trustworthy
+
+Experiment documentation:
+
+04-gtm/experiments/
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* React
+* Vite
+* TailwindCSS
+
+### Deployment
+
+* Vercel
+
+### Version Control
+
+* GitHub
+
+### Product Design
+
+* Figma
+
+---
+
+## Architecture
+
+The MVP uses a frontend-focused architecture deployed through Vercel.
+
+Architecture documentation:
+
+03-build/architecture/
+
+---
+
+## Traction
+
+Early validation results:
+
+* 12 student test users
+* 5 students expressed intent to use during exams
+* 3 tutors expressed interest in joining the platform
+
+---
+
+## Team Contributions
+
+The project involved collaboration across:
+
+* frontend development
+* product design
+* usability testing
+* documentation
+* experimentation
+* validation research
+
+---
+
+## Future Roadmap
+
+* Tutor ratings and reviews
+* Advanced search filters
+* Booking system
+* Messaging functionality
+* Verified tutor badges
+
+---
+
+
 ### What the Venture Packet Must Contain by Week 15
 
 A complete venture packet -- the standard by which your work will be assessed at Demo Day -- includes all of the following:
