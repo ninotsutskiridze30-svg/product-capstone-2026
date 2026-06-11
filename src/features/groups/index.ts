@@ -1,2 +1,0 @@
-/** Student groups. */
-export {};

@@ -1,2 +1,0 @@
-/** Reviews and ratings. */
-export {};

@@ -1,2 +1,0 @@
-/** Fields / subjects entity. */
-export {};
