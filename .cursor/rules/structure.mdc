@@ -1,0 +1,1482 @@
+---
+alwaysApply: true
+description: Next.js framework
+---
+
+## General Information
+
+This project is built using the following technologies:
+
+- **Next.js 16.x** - React framework
+- **React 19.x** - UI library
+- **TypeScript** - typed superset of JavaScript
+- **Tailwind CSS** - CSS framework for styling
+- **HeroUI** - UI component library
+- **Zustand** - state management library
+- **React Query** - library for server state management
+- **React Hook Form** - library for form handling
+- **Payload CMS** - library for form handling
+
+## Project Structure
+
+```
+client/
+├── src/
+│   ├── app/
+│   │   ├── (web)/              # Web interface
+│   │   │   ├── page_name/      # Page
+│   │   │   └── ...
+│   │   ├── (api)/              # API endpoints
+│   │   ├── module/             # Application modules
+│   │   │   ├── module_name/
+│   │   │   └── ...
+│   │   ├── shared/             # Shared components
+│   │   │   ├── component/      # Application components
+│   │   │   │   ├── component_name/
+│   │   │   │   └── ...
+│   │   │   ├── service/        # Shared services
+│   │   │   ├── routes/         # Route definitions
+│   │   │   ├── constant/       # Constants
+│   │   │   ├── rest-api/       # API client
+│   │   │   ├── store/          # Zustand store
+│   │   │   └── asset/          # Static resources
+│   │   ├── manifest.ts         # PWA manifest
+│   │   └── robots.ts           # Robots.txt configuration
+│   ├── pkg/                    # Packages and tools
+│   │   ├── hook/               # React hooks
+│   │   ├── library/            # Libraries
+│   │   ├── util/               # Utilities
+│   │   ├── style/              # Styles
+│   │   └── font/               # Fonts
+│   └── proxy.ts                # Next.js proxy
+├── public/                     # Static public assets
+│   ├── image/                  # Image assets
+│   │   └── folder_name/        # Payment provider logos
+│   ├── logo.svg                # Company logo
+│   └── favicon.ico             # Site favicon
+├── translation/                # Translation messages
+│   ├── en.json                 # English translations
+│   └── de.json                 # German translations
+├── tests/                      # Test files
+├── package.json                # Package configuration
+├── tsconfig.json               # TypeScript configuration
+├── tailwind.config.ts          # Tailwind CSS configuration
+├── eslint.config.mjs           # ESLint configuration
+├── next.config.ts              # Next.js configuration
+├── playwright.config.ts        # Playwright test configuration
+├── postcss.config.mjs          # PostCSS configuration
+├── Makefile                    # Build automation
+├── README.md                   # Project documentation
+├── .gitignore                  # Git ignore rules
+├── .dockerignore               # Docker ignore rules
+├── .prettierrc                 # Prettier configuration
+└── ...
+```
+
+# Module Creation Template
+
+This document describes the standard module structure in a Next.js project.
+
+## Module Structure
+
+```
+module_name/
+├── module_name.module.tsx        # Main module component
+├── module_name.service.tsx       # Module service (logic, API interaction)
+├── module_name.store.ts          # Module state (Zustand)
+├── index.ts                      # Module export
+├── element/                      # Nested module elements
+│   ├── element_name/             # Specific element
+│   │   ├── index.ts              # Element export
+│   │   └── element_name.component.tsx  # Element component
+│   └── ...
+└── constant/                     # Module constants
+    ├── index.ts                  # Constants export
+    └── module_name.constant.ts   # Constants file
+```
+
+## Required Files
+
+### 1. module_name.module.tsx
+
+```tsx
+"use client";
+
+import { ModuleElementComponent } from "./element/element_name";
+import { useModuleService } from "./module_name.service";
+
+// interface
+interface IProps {}
+
+// component
+const ModuleNameModule: React.FC<IProps> = () => {
+  const thisService = useModuleService();
+
+  // return
+  return (
+    <main>
+      <ModuleElementComponent isLoaded={thisService.isLoaded} />
+    </main>
+  );
+};
+
+export default ModuleNameModule;
+```
+
+### 2. module_name.service.tsx
+
+```tsx
+import { useOrganization } from "@clerk/nextjs";
+
+// service
+export const useModuleService = () => {
+  const { isLoaded } = useOrganization();
+
+  // return
+  return { isLoaded };
+};
+```
+
+### 3. module_name.store.ts
+
+```tsx
+import { create } from "zustand";
+import { devtools } from "zustand/middleware";
+
+// interface
+interface IState {
+  isOpen: boolean;
+}
+
+interface IParams extends Partial<IState> {}
+
+interface IStore extends IState {
+  handleModuleStore: (value: IParams) => void;
+}
+
+// store
+export const useModuleStore = create<IStore>()(
+  devtools(
+    (set) => ({
+      isOpen: false,
+      handleModuleStore: (params: IParams) =>
+        set((state: IState) => ({ ...state, ...params })),
+    }),
+    {
+      enabled:
+        process.env.NODE_ENV !== "production" && typeof window !== "undefined",
+    }
+  )
+);
+```
+
+### 4. index.ts
+
+```tsx
+export { default as ModuleNameModule } from "./module_name.module";
+```
+
+## Nested Elements
+
+### element_name/index.ts
+
+```tsx
+import dynamic from "next/dynamic";
+
+export const ModuleElementComponent = dynamic(
+  () => import("./element_name.component")
+);
+```
+
+### element_name/element_name.component.tsx
+
+```tsx
+import { FC } from "react";
+
+import { Skeleton } from "@heroui/skeleton";
+
+// interface
+interface IProps {
+  isLoaded?: boolean;
+}
+
+// component
+const ModuleElementComponent: FC<Readonly<IProps>> = (props) => {
+  const { isLoaded = true } = props;
+
+  // return
+  return (
+    <div>
+      <Skeleton isLoaded={isLoaded} className={"rounded-md"}>
+        Module element content
+      </Skeleton>
+    </div>
+  );
+};
+
+export default ModuleElementComponent;
+```
+
+## Constants
+
+### constant/index.ts
+
+```tsx
+export { moduleData } from "./module_name.constant";
+```
+
+### constant/module_name.constant.ts
+
+```tsx
+export const moduleData = {
+  example: "example",
+};
+```
+
+# Component Creation Template
+
+This document describes the standard component structure in a Next.js project.
+
+## Component Structure
+
+```
+component_name/
+├── component_name.component.tsx   # Main component
+├── component_name.service.tsx     # Component service (logic)
+├── index.ts                       # Component export
+└── element/                       # Nested elements (optional)
+    ├── element_name/              # Specific element
+    │   ├── index.ts               # Element export
+    │   ├── element_name.component.tsx  # Element component
+    │   └── element_name.service.tsx    # Element service (optional)
+    └── ...
+```
+
+## Required Files
+
+### 1. component_name.component.tsx
+
+```tsx
+"use client";
+
+import { FC } from "react";
+import { cn } from "@/app/shared/utils/cn";
+import { BaseComponentProps } from "@/app/shared/types/common";
+
+// interface
+interface IProps extends BaseComponentProps {
+  isLoaded?: boolean;
+}
+
+// component
+const ComponentName: FC<Readonly<IProps>> = (props) => {
+  const { children, className = "", isLoaded = true } = props;
+
+  // Co-located styles using Tailwind tokens
+  const baseStyles = "bg-background-light text-text-primary";
+
+  // return
+  return <div className={cn(baseStyles, className)}>{children}</div>;
+};
+
+export default ComponentName;
+```
+
+### 2. component_name.service.tsx
+
+```tsx
+import { useState } from "react";
+
+// service
+export const useComponentService = () => {
+  const [value, setValue] = useState(false);
+
+  // return
+  return { value, setValue };
+};
+```
+
+### 3. index.ts
+
+```tsx
+import dynamic from "next/dynamic";
+
+export const ComponentNameComponent = dynamic(
+  () => import("./component_name.component")
+);
+```
+
+## Nested Elements (Optional)
+
+If the component has nested elements, each one should follow a similar structure:
+
+### element_name/index.ts
+
+```tsx
+import dynamic from "next/dynamic";
+
+export const ElementNameComponent = dynamic(
+  () => import("./element_name.component")
+);
+```
+
+### element_name/element_name.component.tsx
+
+```tsx
+import { FC } from "react";
+
+// interface
+interface IProps {
+  isLoaded?: boolean;
+}
+
+// component
+const ElementName: FC<Readonly<IProps>> = (props) => {
+  const { isLoaded = true } = props;
+
+  // return
+  return <div>{/* Element content */}</div>;
+};
+
+export default ElementName;
+```
+
+### element_name/element_name.service.tsx (optional)
+
+```tsx
+// service
+
+export const useElementService = () => {
+  // Define element logic
+
+  // return
+  return {};
+};
+```
+
+## Best Practices
+
+1. Keep components focused on a single responsibility
+2. Use the service for all business logic, data fetching, and state management
+3. Prefer composition over inheritance - break complex components into smaller, reusable ones
+4. Use dynamic imports with Next.js for code splitting
+5. Follow consistent naming conventions throughout the project
+
+# Modal/Popup Management
+
+This document describes the standard structure and best practices for creating modals/popups in the application.
+
+## Modal Structure
+
+For a reusable modal component, follow the standard **Component Creation Template** with specific implementation details:
+
+```
+modal_name/
+├── modal_name.component.tsx   # Main modal component (encapsulates Portal, Backdrop, etc.)
+├── modal_name.interface.ts    # Prop definitions
+├── index.ts                   # Component export
+```
+
+## Implementation Guidelines
+
+1. **Use `BaseModal`**: Whenever possible, wrap your content in the `BaseModalComponent` (located in `src/app/shared/components/base-modal`). This ensures consistent styling (backdrop, rounded corners, shadows) and behavior (portal rendering, scroll locking).
+
+2. **Portal Rendering**: Always use `createPortal` (via `BaseModal` or directly) to render modals at the document body level. This prevents z-index and stacking context issues.
+
+3. **Scroll Locking**: Modals must lock the body scroll when open to prevent background scrolling. This is handled automatically by `BaseModal`.
+
+4. **Action Buttons**: Follow the standard layout for action buttons:
+   - **Primary Action**: Full-width, brand color (Orange/Primary), placed at the bottom.
+   - **Secondary Action**: Full-width, transparent/text-only, placed below the Primary Action.
+
+## Example: Using BaseModal
+
+```tsx
+// my-feature-modal.component.tsx
+import { BaseModalComponent } from "@/app/shared/components/base-modal";
+
+export const MyFeatureModal = ({ isOpen, onClose }) => {
+  return (
+    <BaseModalComponent
+      isOpen={isOpen}
+      onClose={onClose}
+      title="My Feature"
+      primaryAction={{
+        label: "Save Changes",
+        onClick: handleSave,
+        variant: "primary"
+      }}
+      secondaryAction={{
+        label: "Cancel",
+        onClick: onClose,
+        variant: "secondary"
+      }}
+    >
+      <div className="p-4">
+        {/* Modal Content */}
+      </div>
+    </BaseModalComponent>
+  );
+};
+```
+
+# REST API Creation Template
+
+This document describes the standard REST API structure in a Next.js project.
+
+## REST API Structure
+
+```
+feature_name/
+├── feature_name.api.ts            # API implementation
+├── feature_name.hook.ts           # React Query hooks
+├── feature_name.interface.ts      # TypeScript interfaces
+└── index.ts                       # Exports
+```
+
+## Required Files
+
+### 1. feature_name.interface.ts
+
+```tsx
+export enum EFeatureNameKey {
+  FEATURE_QUERY = "feature_query",
+  FEATURE_MUTATION = "feature_mutation",
+}
+
+export enum EFeatureNameApi {
+  API_FEATURE = "feature",
+}
+
+interface IFeatureName {
+  propertyName: string;
+}
+
+export interface IFeatureNameReq extends IFeatureName {}
+
+export interface IFeatureNameRes {
+  data: IFeatureName;
+}
+```
+
+### 2. feature_name.api.ts
+
+```tsx
+import { restApiFetcher } from "@/pkg/library/rest-api";
+
+import { IFeatureNameReq } from "./feature_name.interface";
+import { EFeatureNameApi } from "./feature_name.interface";
+import { IFeatureNameRes } from "./feature_name.interface";
+
+// query
+export const featureNameQueryApi = async (params?: string) => {
+  const res = await restApiFetcher.get<IFeatureNameRes>(
+    EFeatureNameApi.API_FEATURE,
+    {
+      headers: { params },
+    }
+  );
+
+  return await res.json();
+};
+
+// mutation
+export const featureNameMutationApi = async (json: IFeatureNameReq) => {
+  const res = await restApiFetcher.post<IFeatureNameRes>(
+    EFeatureNameApi.API_FEATURE,
+    { json }
+  );
+
+  return await res.json();
+};
+```
+
+### 3. feature_name.hook.ts
+
+```tsx
+import {
+  queryOptions,
+  useMutation,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
+
+import { featureNameMutationApi } from "./feature_name.api";
+import { featureNameQueryApi } from "./feature_name.api";
+import { EFeatureNameKey } from "./feature_name.interface";
+
+// options
+export const featureNameQueryOptions = (params?: string) => {
+  return queryOptions({
+    queryKey: [EFeatureNameKey.FEATURE_QUERY],
+    queryFn: () => featureNameQueryApi(params),
+  });
+};
+
+// query
+export const useFeatureNameQuery = () => {
+  return useSuspenseQuery(featureNameQueryOptions());
+};
+
+// mutation
+export const useFeatureNameMutation = (opt?: { onSuccess: () => void }) => {
+  return useMutation({
+    mutationKey: [EFeatureNameKey.FEATURE_MUTATION],
+    mutationFn: featureNameMutationApi,
+    onSuccess: opt?.onSuccess,
+  });
+};
+```
+
+### 4. index.ts
+
+```tsx
+export {
+  featureNameQueryOptions,
+  useFeatureNameMutation,
+  useFeatureNameQuery,
+} from "./feature_name.hook";
+export {
+  EFeatureNameApi,
+  EFeatureNameKey,
+  type IFeatureNameReq,
+  type IFeatureNameRes,
+} from "./feature_name.interface";
+```
+
+## Best Practices
+
+1. Define clear interfaces before implementing API functions
+2. Use enums for consistent API endpoints and query keys
+3. Separate API implementations from React Query hooks
+4. Use React Query for data fetching, caching, and state management
+5. Export all necessary types and functions through the index file
+6. Use consistent naming conventions across all files
+
+# Guide for Integrating New Languages into the Translation System
+
+## Overview
+
+This guide describes the process of adding new languages to the project and configuring the translation system. The project uses @Inlang and @Paraglide for translation management.
+
+## Prerequisites
+
+- Access to the project code
+- Installed project dependencies (`yarn install`)
+
+## Step 1: Adding a New Language in Project Settings
+
+en thion configuration file:
+
+```
+apps/client/translation/project.inlang/settings.json
+```
+
+2. Add the new language code to the `locales` array:
+
+   ```json
+   {
+     "$schema": "https://inlang.com/schema/project-settings",
+     "baseLocale": "en",
+     "locales": ["en", "de", "uk"],
+     "modules": [
+       "https://cdn.jsdelivr.net/npm/@inlang/plugin-message-format@3/dist/index.js",
+       "https://cdn.jsdelivr.net/npm/@inlang/plugin-m-function-matcher@1/dist/index.js"
+     ],
+     "plugin.inlang.messageFormat": {
+       "pathPattern": "./messages/{locale}.json"
+     }
+   }
+   ```
+
+## Step 2: Creating a Translation File
+
+1. Create a new file in the translations directory:
+
+   ```
+   apps/client/translation/messages/uk.json
+   ```
+
+2. Copy the structure from an existing language file (e.g., from `en.json`) and keep the keys unchanged:
+
+   ```json
+   {
+     "$schema": "https://inlang.com/schema/inlang-message-format",
+     "metadata_app": "Billing",
+     "metadata_app_desc": "Payment management system",
+     ...
+   }
+   ```
+
+## Step 3: Using Translation Keys in Components
+
+When developing components, use imports and keys for translation:
+
+1. Import the translation library in your component:
+
+   ```tsx
+   import { m } from "@/pkg/library/i18n/paraglide/messages";
+   ```
+
+2. Use keys in your code:
+
+   ```tsx
+   <Button>{m.btn_save()}</Button>
+   <p>{m.page_setting_description()}</p>
+   ```
+
+3. For translations with parameters:
+
+   ```tsx
+   <p>{m.label_payment_details_expires({ mounth: "12", year: "2024" })}</p>
+   ```
+
+## Step 4: Automatic Translation
+
+1. After adding a new language, run the command for automatic translation:
+
+   ```bash
+   yarn translate
+   ```
+
+2. This command will automatically generate translations for all untranslated keys in the file.
+
+## Step 5: Checking and Correcting Translations
+
+1. Open the generated translation file and check the quality of the automatic translation
+2. Correct translations if necessary
+3. Run the translation quality check:
+
+   ```bash
+   yarn locale-check
+   ```
+
+## Step 6: Integration with Settings Module
+
+If you want to add the ability to change the language in user settings:
+
+1. Add a language selector to the settings component
+2. Use functions from the Paraglide library to change the active language
+
+Example of integration in settings:
+
+```tsx
+import { changeLocale, getLocale } from "@/pkg/library/i18n/paraglide/runtime";
+
+// component
+const LanguageSelectorComponent = () => {
+  const currentLocale = getLocale();
+
+  // return
+  return (
+    <select
+      value={currentLocale}
+      onChange={(e) => changeLocale(e.target.value)}
+    >
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  );
+};
+```
+
+## Step 7: Testing
+
+1. Check that translations are displayed correctly in all parts of the application
+2. Make sure that language switching works properly
+3. Verify that all interface texts are displayed correctly in each language
+
+## Useful Commands
+
+- Check translation completeness: `yarn locale-check`
+- Automatic translation: `yarn translate`
+- Run the application with new translations: `yarn dev`
+
+## Common Issues
+
+1. **Missing keys in translations**:
+   - Make sure all keys from the original file (`en.json`) are present in the new file
+2. **Translations not displaying**:
+   - Check if the `settings.json` file is configured correctly
+   - Restart the development server
+3. **Problems with automatic translation**:
+   - Check your internet connection
+   - Make sure the Inlang CLI is installed correctly
+
+## Conclusion
+
+By following this guide, you can easily add new languages to the project and maintain up-to-date translations. The automatic translation system simplifies the initial creation of translations, and the integrated verification process helps ensure their quality.
+
+# Shared Files Management Guide
+
+This document describes the structure and best practices for working with shared files and components in the Next.js project.
+
+## Shared Directory Structure
+
+```
+shared/
+├── design-token/                 # Design system tokens (TS access to CSS vars)
+│   ├── color.ts                  # Color palette tokens (references var(--color-name))
+│   ├── typography.ts             # Font and text tokens
+│   ├── spacing.ts                # Spacing scale tokens
+│   ├── shadow.ts                 # Shadow definitions
+│   ├── border.ts                 # Border and radius tokens
+│   ├── transition.ts             # Animation timing tokens
+│   └── index.ts                  # Unified token exports
+├── component/                    # Shared UI components
+│   ├── component_name/
+│   └── ...
+├── service/                      # Shared business logic
+│   ├── service_name.service.ts
+│   ├── ...
+│   └── index.ts                  # Service exports
+├── routes/                       # Route definitions
+│   ├── route.interface.ts        # Route type definitions
+│   └── index.ts                  # Route exports
+├── constant/                     # Application constants (Logic only, no CSS strings)
+│   ├── constant_name.constant.ts
+│   ├── ...
+│   └── index.ts                  # Constant exports
+├── rest-api/                     # API client configuration
+│   ├── api/                      # API implementations
+│   └── interface/                # API interfaces
+├── store/                        # Global state management
+│   ├── global.store.ts           # Global Zustand store
+│   └── index.ts                  # Store exports
+├── ui/                           # Primitive UI components (Buttons, Inputs)
+│   ├── typography/               # Text components
+│   └── ...
+├── utils/                        # Shared utilities
+│   ├── cn.ts                     # Class merging utility
+│   └── ...
+└── asset/                        # Shared assets
+    ├── icon/                     # Icon components/assets
+    └── interface/                # Asset interfaces
+```
+
+## Design System Architecture
+
+### 1. Design Tokens as Single Source of Truth
+Do not duplicate Hex codes or values in TypeScript. `globals.css` is the master source for values. TypeScript tokens should reference CSS variables.
+
+**Incorrect (Duplication):**
+```typescript
+export const colors = { primary: '#FF4500' }; // ❌ Duplicate source of truth
+```
+
+**Correct (Reference):**
+```typescript
+export const colors = { primary: 'var(--color-primary)' }; // ✅ References CSS Variable
+```
+
+### 2. Co-located Component Styles
+Do not create global "CSS Constant" files (e.g., `design.constant.ts`). Keep styles local to the component using Tailwind classes and the `cn()` utility.
+
+**Pattern:**
+```tsx
+import { cn } from '@/app/shared/utils/cn';
+
+const variants = {
+  primary: 'bg-primary text-white hover:bg-primary-hover', // Uses Tailwind theme tokens
+  secondary: 'bg-background-light text-text-primary border-border',
+};
+
+export function BaseButton({ variant = 'primary', className, ...props }) {
+  return (
+    <button
+      className={cn(
+        'flex items-center rounded-full px-4 py-2 transition-colors', // Base
+        variants[variant], // Variant
+        className // Override
+      )}
+      {...props}
+    />
+  );
+}
+```
+
+### 3. Utility Functions
+The `cn` utility is mandatory for all class composition to prevent conflicts.
+
+```typescript
+// utils/cn.ts
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+```
+
+## Component Management
+
+### Creating Shared Components
+
+Shared components should be reusable across multiple modules and pages. Follow this structure:
+
+```
+component_name/
+├── component_name.component.tsx   # Main component
+├── component_name.service.tsx     # Component logic (optional)
+├── index.ts                       # Component export
+└── element/                       # Sub-components (optional)
+    └── element_name/
+        ├── index.ts
+        └── element_name.component.tsx
+```
+
+### Component Template
+
+```tsx
+// component_name.component.tsx
+"use client";
+
+import { FC } from "react";
+import { cn } from "@/app/shared/utils/cn";
+import { BaseComponentProps } from "@/app/shared/types/common";
+
+// interface
+interface IProps extends BaseComponentProps {
+  isLoaded?: boolean;
+}
+
+// component
+const ComponentName: FC<Readonly<IProps>> = (props) => {
+  const { children, className = "", isLoaded = true } = props;
+
+  // Co-located styles using Tailwind tokens
+  const baseStyles = "component-base-styles bg-background-light text-text-primary";
+
+  // return
+  return <div className={cn(baseStyles, className)}>{children}</div>;
+};
+
+export default ComponentName;
+```
+
+### Component Export Template
+
+```tsx
+// index.ts
+
+import dynamic from "next/dynamic";
+
+export const ComponentNameComponent = dynamic(
+  () => import("./component_name.component")
+);
+```
+
+## Service Management
+
+### Service Structure
+
+Services contain reusable business logic, utilities, and formatting functions.
+
+```tsx
+// service_name.service.ts
+
+// service logic
+export const useServiceName = () => {
+  const formatValue = (value: string) => {
+    // formatting logic
+    return value;
+  };
+
+  const processData = (data: any[]) => {
+    // data processing logic
+    return data;
+  };
+
+  // return
+  return { formatValue, processData };
+};
+
+// utility functions
+export const serviceUtility = {
+  helper: (input: string) => input,
+  validator: (value: any) => Boolean(value),
+};
+```
+
+### Service Index Export
+
+```tsx
+// service/index.ts
+
+export { useServiceName, serviceUtility } from "./service_name.service";
+export { useCurrencyService } from "./currency.service";
+export { showToast } from "./show-toast.service";
+export { useDateTimeFormat } from "./date-time-format.service";
+export { useValueFormat } from "./value-format.service";
+```
+
+## Constants Management
+
+### Constant Structure
+
+```tsx
+// constant_name.constant.ts
+
+export const CONSTANT_NAME = {
+  VALUE_ONE: "value_one",
+  VALUE_TWO: "value_two",
+} as const;
+
+export type TConstantName = (typeof CONSTANT_NAME)[keyof typeof CONSTANT_NAME];
+
+// array constants
+
+export const constantArray = [
+  { id: 1, name: "Item 1", value: "item1" },
+  { id: 2, name: "Item 2", value: "item2" },
+];
+
+// enum alternative
+
+export enum EConstantName {
+  VALUE_ONE = "value_one",
+  VALUE_TWO = "value_two",
+}
+```
+
+### Constant Index Export
+
+```tsx
+// constant/index.ts
+
+export { CURRENCIES, type TCurrency } from "./currencies.constant";
+export { COUNTRIES, type TCountry } from "./countries.constant";
+export { SUB_STATUS_COLORS } from "./sub-status-color.constant";
+```
+
+## Store Management
+
+### Global Store Structure
+
+```tsx
+// global.store.ts
+
+import { create } from "zustand";
+import { devtools } from "zustand/middleware";
+
+// interface
+interface IState {
+  isLoading: boolean;
+  theme: "light" | "dark";
+  language: string;
+}
+
+interface IParams extends Partial<IState> {}
+
+interface IStore extends IState {
+  handleGlobalStore: (value: IParams) => void;
+  resetStore: () => void;
+}
+
+// initial state
+const initialState: IState = {
+  isLoading: false,
+  theme: "light",
+  language: "en",
+};
+
+// store
+export const useGlobalStore = create<IStore>()(
+  devtools(
+    (set) => ({
+      ...initialState,
+      handleGlobalStore: (params: IParams) =>
+        set((state: IState) => ({ ...state, ...params })),
+      resetStore: () => set(initialState),
+    }),
+    {
+      enabled:
+        process.env.NODE_ENV !== "production" && typeof window !== "undefined",
+    }
+  )
+);
+```
+
+## Routes Management
+
+### Route Interface
+
+```tsx
+// route.interface.ts
+
+export interface IRoute {
+  path: string;
+  name: string;
+  icon?: string;
+  children?: IRoute[];
+  protected?: boolean;
+}
+
+export interface INavigation {
+  routes: IRoute[];
+  currentPath: string;
+}
+
+// route constants
+
+export const ROUTES = {
+  HOME: "/",
+  DASHBOARD: "/dashboard",
+  SETTINGS: "/settings",
+  BILLING: "/billing",
+} as const;
+
+export type TRoutePath = (typeof ROUTES)[keyof typeof ROUTES];
+```
+
+## API Management
+
+### API Structure in Shared
+
+The `rest-api` folder contains shared API configurations and interfaces:
+
+```
+rest-api/
+├── api/                         # Shared API implementations
+│   ├── auth.api.ts              # Authentication API
+│   └── common.api.ts            # Common API calls
+└── interface/                   # Shared API interfaces
+    ├── auth.interface.ts        # Auth interfaces
+    └── common.interface.ts      # Common interfaces
+```
+
+## Best Practices
+
+### 1. Component Guidelines
+
+- Keep shared components generic and reusable
+- Use proper TypeScript interfaces
+- Implement proper error boundaries
+- Follow accessibility guidelines
+- Use consistent naming conventions
+
+### 2. Service Guidelines
+
+- Create focused, single-responsibility services
+- Use proper error handling
+- Implement proper TypeScript types
+- Make services testable
+- Document complex logic
+
+### 3. Constant Guidelines
+
+- Use `const assertions` for immutable objects
+- Group related constants together
+- Export types for TypeScript support
+- Use descriptive naming
+- Avoid magic numbers/strings
+
+### 4. Store Guidelines
+
+- Keep global state minimal
+- Use proper TypeScript interfaces
+- Implement proper devtools integration
+- Create focused stores for different concerns
+- Provide reset functionality
+
+### 5. Import Guidelines
+
+- Always use index files for clean imports
+- Use dynamic imports for code splitting
+- Group imports logically
+- Use absolute imports with proper aliases
+
+## Usage Examples
+
+### Using Shared Components
+
+```tsx
+import { HeaderComponent } from "@/app/shared/component/header";
+import { TableComponent } from "@/app/shared/component/table";
+import { ModalComponent } from "@/app/shared/component/modal";
+
+// component
+const ModuleNameModule = () => {
+  // return
+  return (
+    <div>
+      <HeaderComponent title="Page Title" />
+
+      <TableComponent data={data} />
+
+      <ModalComponent isOpen={isOpen} onClose={handleClose} />
+    </div>
+  );
+};
+```
+
+### Using Shared Services
+
+```tsx
+import { useCurrencyService, showToast } from "@/app/shared/service";
+
+// component
+const MyComponent = () => {
+  const { formatCurrency } = useCurrencyService();
+
+  const handleAction = () => {
+    const formattedPrice = formatCurrency(100, "USD");
+    showToast("Success!", "success");
+  };
+
+  // return
+  return <div>{formattedPrice}</div>;
+};
+```
+
+### Using Shared Constants
+
+```tsx
+import { CURRENCIES, COUNTRIES } from "@/app/shared/constant";
+
+// component
+const MyComponent = () => {
+  // return
+  return (
+    <select>
+      {CURRENCIES.map((currency) => (
+        <option key={currency.code} value={currency.code}>
+          {currency.name}
+        </option>
+      ))}
+    </select>
+  );
+};
+```
+
+### Using Shared Store
+
+```tsx
+import { useGlobalStore } from "@/app/shared/store";
+
+// component
+const MyComponent = () => {
+  const { theme, isLoading, handleGlobalStore } = useGlobalStore();
+
+  const toggleTheme = () => {
+    handleGlobalStore({ theme: theme === "light" ? "dark" : "light" });
+  };
+
+  // return
+  return (
+    <div className={`theme-${theme}`}>
+      {isLoading ? "Loading..." : "Content"}
+      <button onClick={toggleTheme}>Toggle Theme</button>
+    </div>
+  );
+};
+```
+
+## Maintenance Guidelines
+
+1. **Regular Review**: Periodically review shared components for unused code
+2. **Documentation**: Keep documentation updated with changes
+3. **Testing**: Ensure shared components have proper test coverage
+4. **Performance**: Monitor bundle size impact of shared components
+5. **Versioning**: Consider versioning for breaking changes in shared APIs
+
+# Testing Application Guide with Playwright
+
+## Introduction
+
+This guide is designed for creating and running tests using Playwright for our Next.js application. Playwright allows you to automate web application testing across different browsers (Chromium, WebKit, and Firefox).
+
+## Environment Setup
+
+Playwright and all necessary dependencies are already installed in the project. If you're working with the project for the first time, be sure to install the browsers:
+
+```bash
+npx playwright install
+```
+
+## Test Structure
+
+Tests are organized as follows:
+
+```
+apps/client/tests/           # Directory with tests
+├──  test-name.spec.ts       # Tests for the sign-in page
+└──  README.md               # Testing documentation
+```
+
+## Creating New Tests
+
+### Basic Test Structure
+
+When creating a new test, follow this structure:
+
+```typescript
+import { test, expect } from "@playwright/test";
+
+// Description of the test group
+
+test.describe("Feature name", () => {
+  // Individual test in this group
+  test("should perform a specific action", async ({ page }) => {
+    // Test setup
+    await page.goto("/path");
+
+    // Actions
+    await page.getByRole("button", { name: "Button" }).click();
+
+    // Result verification
+    await expect(page.locator(".result")).toBeVisible();
+  });
+});
+```
+
+### Best Practices for Selecting Locators
+
+For test reliability, use locators in the following priority:
+
+1. **Roles and Accessibility** - best for buttons, forms, navigation elements:
+
+   ```typescript
+   page.getByRole("button", { name: "Pay" });
+   page.getByLabel("Email");
+   ```
+
+2. **Text Content** - for elements with unique text:
+
+   ```typescript
+   page.getByText("Profile Settings");
+   ```
+
+3. **Test IDs** - for dynamic elements:
+
+   ```typescript
+   page.getByTestId("payment-form");
+   ```
+
+4. **CSS Selectors** - as a last resort:
+
+   ```typescript
+   page.locator('.payment-container form button[type="submit"]');
+   ```
+
+### Testing the Sign-in Page (Example)
+
+```typescript
+import { expect, test } from "@playwright/test";
+
+test("sign-in page should display correctly", async ({ page }) => {
+  // Navigate to the sign-in page
+  await page.goto("/sign-in");
+
+  // Check URL
+  await expect(page).toHaveURL(/sign-in/);
+
+  // Check presence of form elements
+  await expect(page.getByRole("heading", { name: "Sign In" })).toBeVisible();
+  await expect(page.getByLabel("Email")).toBeVisible();
+  await expect(page.getByLabel("Password")).toBeVisible();
+  await expect(page.getByRole("button", { name: "Sign In" })).toBeVisible();
+});
+```
+
+### Testing Application Modules
+
+Example of testing a payment system module:
+
+```typescript
+import { expect, test } from "@playwright/test";
+
+test.describe("Payment Module", () => {
+  test.beforeEach(async ({ page }) => {
+    // Authentication before each test
+    await page.goto("/sign-in");
+    await page.getByLabel("Email").fill("test@example.com");
+    await page.getByLabel("Password").fill("password123");
+    await page.getByRole("button", { name: "Sign In" }).click();
+    await page.waitForURL("/dashboard");
+  });
+
+  test("should display a list of payment methods", async ({ page }) => {
+    await page.goto("/billing/payment-methods");
+    await expect(page.getByTestId("payment-methods-list")).toBeVisible();
+  });
+
+  test("should allow adding a new payment method", async ({ page }) => {
+    await page.goto("/billing/payment-methods");
+    await page.getByRole("button", { name: "Add Payment Method" }).click();
+
+    // Fill out the form
+    await page.getByLabel("Card Number").fill("4242 4242 4242 4242");
+    await page.getByLabel("Expiration Date").fill("12/25");
+    await page.getByLabel("CVC").fill("123");
+    await page.getByRole("button", { name: "Save" }).click();
+
+    // Check successful addition
+    await expect(
+      page.getByText("Payment method successfully added")
+    ).toBeVisible();
+  });
+});
+```
+
+## Running Tests
+
+### Running All Tests
+
+```bash
+yarn test
+```
+
+### Running Tests with UI Mode
+
+```bash
+yarn test:ui
+```
+
+### Running Tests in Debug Mode
+
+```bash
+yarn test:debug
+```
+
+### Running a Specific Test
+
+```bash
+yarn test tests/sign-in.spec.ts
+```
+
+## Testing on Different Devices
+
+Our configuration supports testing on different devices:
+
+```typescript
+// playwright.config.ts (fragment)
+projects: [
+  {
+    name: "chromium",
+    use: { ...devices["Desktop Chrome"] },
+  },
+  {
+    name: "Mobile Chrome",
+    use: {
+      ...devices["iPhone SE"],
+    },
+  },
+];
+```
+
+For creating tests specific to mobile devices:
+
+```typescript
+test("mobile navigation should display correctly", async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto("/");
+
+  if (isMobile) {
+    // Check mobile menu
+    await page.getByRole("button", { name: "Menu" }).click();
+    await expect(page.getByRole("navigation")).toBeVisible();
+  } else {
+    // Check desktop menu
+    await expect(page.getByRole("navigation")).toBeVisible();
+  }
+});
+```
+
+## Common Testing Patterns
+
+### Form Validation
+
+```typescript
+test("form should display validation errors", async ({ page }) => {
+  await page.goto("/contact");
+
+  // Click the button without filling in fields
+  await page.getByRole("button", { name: "Submit" }).click();
+
+  // Check error messages
+  await expect(page.getByText("Email is required")).toBeVisible();
+});
+```
+
+### Navigation Testing
+
+```typescript
+test("navigation between pages should work correctly", async ({ page }) => {
+  await page.goto("/");
+
+  // Click on a link
+  await page.getByRole("link", { name: "About Us" }).click();
+
+  // Check URL
+  await expect(page).toHaveURL("/about");
+
+  // Check page title
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "About Us"
+  );
+});
+```
+
+### API Response Testing
+
+```typescript
+test("should display data from API", async ({ page }) => {
+  // Intercept network requests
+  await page.route("**/api/users", async (route) => {
+    await route.fulfill({
+      status: 200,
+      body: JSON.stringify([{ id: 1, name: "Test User" }]),
+    });
+  });
+
+  await page.goto("/users");
+
+  // Check data display
+  await expect(page.getByText("Test User")).toBeVisible();
+});
+```
+
+## Recommendations for Effective Testing
+
+1. **Follow the Principle of Test Isolation** - each test should be independent.
+2. **Test from the User's Perspective** - simulate real interactions.
+3. **Use Accessible Attributes** - prioritize `getByRole` and `getByLabel`.
+4. **Organize Tests Logically** - group tests by functionality.
+5. **Avoid Fixed Time Delays** - use event waiting instead.
+6. **Document Complex Tests** - add comments to explain logic.
+
+## Troubleshooting
+
+### Test Cannot Find an Element
+
+1. Check the selector using the Playwright Inspector tool:
+
+   ```bash
+   PWDEBUG=1 yarn test tests/your-test.spec.ts
+   ```
+
+2. Add visibility waiting for the element:
+
+   ```typescript
+   await page.waitForSelector(".element", { state: "visible" });
+   ```
+
+### Test Works Locally but Not in CI
+
+1. Add failure screenshots:
+
+   ```typescript
+   test.afterEach(async ({ page }, testInfo) => {
+     if (testInfo.status !== "passed") {
+       await page.screenshot({ path: `failure-${testInfo.title}.png` });
+     }
+   });
+   ```
+
+2. Check for differences in browser window sizes.
+
+## Conclusion
+
+By following these instructions, you can effectively create and maintain automated tests for our Next.js application. If you have questions, refer to existing tests as examples or consult with the development team.

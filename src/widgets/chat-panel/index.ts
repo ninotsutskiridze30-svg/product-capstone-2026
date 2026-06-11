@@ -1,0 +1,2 @@
+/** Chat panel widget. */
+export {};
